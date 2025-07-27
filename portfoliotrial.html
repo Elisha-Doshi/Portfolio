@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+    nav {
+      background-color: white;
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /*nav .name {
+      font-size: 35px;
+      font-weight: bold;
+      color: crimson;
+      margin-left: 20px;
+    }*/
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav li {
+      display: inline;
+      margin-right: 35px;
+    }
+
+    nav a {
+      color: rgb(133, 133, 220);
+      text-decoration: none;
+      font-weight: bold;
+      margin: 15px;
+    }
+
+    nav a:hover {
+      color: black;
+    }
+
+    hr {
+      border: none;
+      height: 1px;
+      background-color: rgb(133, 133, 220);
+    }
+
+    .parallax-title {
+      background-image: url('/images_files/uiuxbgimg.jpg');
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    .heading-text {
+      background-color: white;
+      color: rgb(133, 133, 220); 
+      padding: 30px 20px;
+      width: 420px;
+      display: flex;
+      align-items: center;
+      text-align: left; 
+      position: absolute;
+      top: 80px;
+      left: 120px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      gap: 20px;
+    }
+
+    .text-wrapper {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+    }
+
+    .text-wrapper > div {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .main-title {
+      font-size: 50px;
+      margin: 0;
+      font-weight: bolder;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .sub-title {
+      font-size: 24px;
+      margin: 10px 0 0 0;
+      color: rgb(133, 133, 220);
+    }
+
+    .portfolio-btn {
+      margin-top: 22px;
+      padding: 10px;
+      background-color: transparent;
+      color:  rgb(133, 133, 220);
+      border: 2px solid rgb(133, 133, 220);
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .portfolio-btn:hover {
+      background-color: rgb(133, 133, 220);
+      color: white;
+    }
+
+    .v-line {
+      width: 3px;
+      height: 155px;
+      background-color: rgb(133, 133, 220);
+    }
+
+    .about {
+      color: rgb(133, 133, 220);
+      /* text-align: center; */
+      padding: 50px 30px;
+      /* justify-content: center ; */
+    }
+
+    .about h1 {
+      font-size: 50px;
+      margin-bottom: 5px;
+      text-align: justify;
+    }
+
+    .about h2 {
+      font-size: 26px;
+      margin-top: 10px;
+      text-align: justify;
+    }
+
+    .about p {
+      font-size: 20px;
+      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-weight: bolder;
+    }
+
+    /* .know-more {
+      color: crimson;
+      background-color: white;
+      border-color: crimson;
+      padding: 10px;
+      font-size: 17px;
+      margin-top: 10px;
+      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-weight: bolder;
+      border: 2px solid;
+      cursor: pointer;
+    }
+
+    .know-more:hover {
+      color: white;
+      background-color: crimson;
+    } */
+
+    .about hr {
+      background-color: rgb(133, 133, 220);
+      height: 1px;
+    }
+
+    .parallax-profession {
+      background-image: url('/images_files/professbg.jpeg');
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    .profs p {
+      /* color: rgb(133, 133, 220); */
+      font-weight: bolder;
+      font-size: 80px;
+      margin-top: -140px;
+    }
+
+    .progress {
+      background-color: rgba(255, 255, 255, 0.9);
+      color: rgb(133, 133, 220);
+      padding: 40px 50px;
+      border-radius: 12px;
+      width: 500px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      text-align: left;
+      margin-top: -700px;
+    }
+
+    .progress h2 {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .skill {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .skill meter {
+      width: 75%;
+      height: 20px;
+      margin-right: 10px;
+    }
+
+    .percent-text {
+      font-weight: bold;
+      width: 50px;
+      text-align: right;
+    }
+
+    .portfolio {
+      color: rgb(133, 133, 220);
+      text-align: center;
+      padding: 50px 30px;
+      margin-top: -30px;
+    }
+
+    .portfolio h1 {
+      font-size: 50px;
+      margin-bottom: 30px;
+    }
+
+    /* .project-section {
+  background: url('/images_files/whitedesuiux.avif'); /* replace with your pattern */
+  /* background-size: cover;
+  background-attachment: fixed;
+} */
+    .projects-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .project-card {
+      width: 300px;
+      background-color: white;
+      border: 1.5px solid rgb(133, 133, 220);
+      padding: 20px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: scale(1.03);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    .project-card h2 {
+      font-size: 22px;
+      color: rgb(133, 133, 220);
+      margin: 10px 0;
+    }
+
+    .project-card p {
+      font-size: 14px;
+      margin-bottom: 15px;
+      color: #444;
+      text-align: center;
+    }
+
+    .prime {
+      color: rgb(133, 133, 220);
+      background-color: transparent;
+      border: 1.5px solid rgb(133, 133, 220);
+      padding: 7px 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .prime:hover {
+      background-color: rgb(133, 133, 220);
+      color: white;
+    }
+
+    .view-all-card {
+  background: white;
+  color: rgb(133, 133, 220);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: 80px;
+  margin-top: 150px;
+}
+
+.view-content p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.view-btn {
+  background: white;
+  color: rgb(133, 133, 220);
+  padding: 8px 16px;
+  /* text-decoration: none; */
+  font-weight: bold;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+.view-btn:hover {
+  background: rgb(204, 204, 248);
+}
+
+  .parallax-bg {
+      background-image: url('/images_files/uicollab.jpeg');
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    .connect-section {
+  background-color: #fdfdfd;
+  padding: 60px 20px;
+  text-align: center;
+  color: rgb(133, 133, 220);
+  border-top: 2px solid rgb(133, 133, 220);
+}
+
+.connect-section h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.connect-section p {
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto 30px auto;
+  color: #444;
+}
+
+.connect-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.connect-btn {
+  padding: 10px 20px;
+  border: 2px solid rgb(133, 133, 220);
+  background: white;
+  color: rgb(133, 133, 220);
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.connect-btn:hover {
+  background: rgb(133, 133, 220);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 0;
+  }
+
+  nav li {
+    margin-right: 0;
+  }
+
+  .heading-text {
+    flex-direction: column;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    padding: 20px;
+  }
+
+  .main-title {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .sub-title {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .v-line {
+    display: none;
+  }
+
+  .portfolio-btn {
+    align-self: center;
+  }
+
+  .about h1 {
+    font-size: 36px;
+  }
+
+  .about h2 {
+    font-size: 22px;
+  }
+
+  .about p {
+    font-size: 16px;
+  }
+
+  .progress {
+    width: 90%;
+    margin-top: -400px;
+    padding: 20px;
+  }
+
+  .skill {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .skill meter {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .percent-text {
+    width: auto;
+    text-align: left;
+  }
+
+  .projects-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .project-card {
+    width: 90%;
+  }
+
+  .view-all-card {
+    margin-top: 0;
+    height: auto;
+    padding: 20px;
+    flex-direction: column;
+  }
+
+  .connect-section h2 {
+    font-size: 30px;
+  }
+
+  .connect-section p {
+    font-size: 16px;
+  }
+}
+
+.about-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background-color: white;
+  color: rgb(133, 133, 220);
+  /* border-color: crimson; */
+  font-weight: bold;
+  border: 1px solid rgb(133, 133, 220);
+  text-decoration: none;
+  border-radius: 8px;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.about-btn:hover {
+  background-color: rgb(133, 133, 220);
+  color: white;
+}
+
+ footer {
+            background-color: rgb(133, 133, 220);
+    
+            color: #f5f5f5;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+
+  </style>
+</head>
+<body>
+
+  <nav>
+    <!-- <div class="name">Elisha D.</div> -->
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <!-- <li><a href="#profile">Profile</a></li> -->
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <hr>
+
+  <section class="parallax-title">
+    <div class="heading-text">
+      <div class="text-wrapper">
+        <p class="main-title">Crafting Living Interfaces</p>
+        <div class="v-line"></div>
+        <div>
+          <p class="sub-title">Your Way to Creative Simplicity</p>
+         <a href="#my-work" class="portfolio-btn">View Portfolio</a>
+
+          <!-- <button class="portfolio-btn">View Portfolio</button> -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <h1>About Me</h1>
+    <h2>UI/UX Designer</h2>
+    <!-- <p>Hello myself Elisha Doshi, I'm a passionate UI/UX designer who creates intuitive and visually appealing interfaces. I love solving design problems and bringing ideas to life.</p> -->
+    <p>Hello! I'm <strong>Elisha Doshi</strong>, a passionate UI/UX designer who crafts intuitive and delightful digital experiences. With a deep love for design and attention to detail, I aim to create clean, user-friendly, and aesthetically pleasing interfaces that solve real problems.</p>
+      <p>My approach is a mix of empathy, curiosity, and creativity. I enjoy working on both web and mobile products — transforming ideas into smooth user flows and stunning visuals.</p>
+    <a href="about.html" target="_self" class="about-btn">Know More</a>
+    <!-- <button class="know-more">Know More</button> -->
+  </section>
+
+  <section class="parallax-profession">
+    <div class="profs">
+      <!-- <p>PROFESSIONAL</p> -->
+    </div>
+  </section>
+
+  <!-- <section class="parallax-profession">
+    <div class="progress">
+      <h2>MY KNOWLEDGE LEVEL IN SOFTWARE</h2>
+      <div class="skill"><label>HTML :</label><meter value="0.95"></meter><span class="percent-text">90%</span></div>
+      <div class="skill"><label>CSS : </label><meter value="0.9"></meter><span class="percent-text">90%</span></div>
+      <div class="skill"><label>JavaScript: </label><meter value="0.6"></meter><span class="percent-text">60%</span></div>
+      <div class="skill"><label>Bootstrap: </label><meter value="0.7"></meter><span class="percent-text">70%</span></div>
+      <div class="skill"><label>Photoshop:</label><meter value="0.75"></meter><span class="percent-text">75%</span></div>
+      <div class="skill"><label>Illustrator:</label><meter value="0.7"></meter><span class="percent-text">70%</span></div>
+      <div class="skill"><label>Figma :</label><meter value="0.9"></meter><span class="percent-text">90%</span></div>
+    </div>
+  </section> -->
+
+  <section class="portfolio project-section" id="my-work">
+    <h1>My Work</h1>
+    <div class="projects-container">
+
+      <div class="project-card">
+        <img src="/images_files/primevdo.png" alt="Prime Video Clone">
+        <h2>PRIME VIDEO CLONE</h2>
+        <p>A responsive clone of Amazon Prime Video built using HTML and CSS. Mimics layout, colors, and structure for practice.</p>
+      <p class="tools-used">Tools: HTML, CSS</p>
+        <button class="prime" disabled>View (Local only)</button>
+      </div>
+
+      <div class="project-card">
+        <img src="/images_files/elanor.png" alt="Élanor">
+        <h2>ÉLANOR</h2>
+        <p>UI concept for a fictional luxury fashion brand. Designed in Figma with an elegant and clean interface.</p>
+      <p class="tools-used">Tools: HTML, CSS</p>
+        <button class="prime" disabled>View (Local only)</button>
+      </div>
+
+      <div class="project-card">
+        <img src="/images_files/groovetgther.png" alt="Groove Together">
+        <h2>GROOVE TOGETHER</h2>
+        <p>A music-sharing web app concept that lets users share playlists in real time. UI prototype made for mobile.</p>
+      <p class="tools-used">Tools: HTML, CSS</p>
+        <button class="prime" disabled>View (Local only)</button>
+      </div>
+
+
+      <div class="project-card view-all-card">
+      <div class="view-content">
+        <p>Want to see more?</p>
+        <a href="#projects" class="view-btn">View All Projects →</a>
+      </div>
+    </div>
+  
+    </div>
+  </section>
+
+    <section class="parallax-bg"></section>
+
+<section class="connect-section" id="contact">
+  <h2>Let's Connect</h2>
+  <p>I'd love to hear from you. Whether it's a project, collaboration, or just a hello — feel free to reach out!</p>
+
+  <div class="connect-links">
+    <!-- <a href="#" class="connect-btn">Email Me</a>
+    <a href="#" target="_self" class="connect-btn">LinkedIn</a>
+    <a href="#" target="_self" class="connect-btn">Instagram</a> -->
+    <a href="mailto:doshielisha905@gmail.com" class="connect-btn">Email Me</a>
+<a href="https://www.linkedin.com/in/elisha-doshi-35aa46315
+" target="_blank" class="connect-btn">LinkedIn</a>
+<a href="https://www.instagram.com/elisha_.d25" target="_blank" class="connect-btn">Instagram</a>
+
+  </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Elisha Doshi</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Elisha Doshi</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      scroll-behavior: smooth;
+      background-color: #ffffff;
+      color: #222;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* --- ABOUT SECTION --- */
+    .about-section {
+      display: flex;
+      flex-wrap: wrap;
+      min-height: 100vh;
+    }
+
+    .about-text {
+      flex: 1;
+      padding: 80px 60px;
+      
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: #f5f5f5;
+    }
+
+    .about-text h1 {
+      font-size: 48px;
+      color: rgb(133, 133, 220);
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      font-size: 20px;
+      color: #444;
+      max-width: 600px;
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+
+    .about-btn {
+      background-color: rgb(133, 133, 220);
+      color: #fff;
+      padding: 12px 30px;
+      border-radius: 6px;
+      width: fit-content;
+      transition: background 0.3s ease;
+      font-weight: 500;
+    
+    }
+
+    .about-btn:hover {
+      background-color: #4c4cc3;
+    }
+
+    .about-image {
+      flex: 1;
+      background-image: url('/images_files/ChatGPT Image Jul 25, 2025, 11_46_17 AM.png');
+      background-size: contain;
+background-repeat: no-repeat;
+background-position: top center;
+background-color:  #f5f5f5;
+    }
+
+    .tools-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.tools-list span {
+  background-color: rgb(133, 133, 220);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+
+    /* --- MAP SECTION --- */
+    .map-section {
+      padding: 80px 20px;
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+
+    .map-section h2 {
+      font-size: 36px;
+      margin-bottom: 40px;
+      color: rgb(133, 133, 220);
+    }
+
+    .map-container {
+      max-width: 900px;
+      margin: 0 auto;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    iframe {
+      width: 100%;
+      height: 450px;
+      border: none;
+    }
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 768px) {
+      .about-section {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .about-text {
+        padding: 60px 30px;
+        text-align: center;
+      }
+
+      .about-text p {
+        margin: 0 auto 30px;
+      }
+
+      .about-btn {
+    margin: 5px 0;
+      }
+
+      .about-image {
+        height: 300px;
+        background-size: contain;
+        background-color: #fff;
+      }
+    }
+
+    .back-home-container {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0px 20px;
+  /* margin-bottom: 20px; */
+}
+
+
+
+@media (max-width: 1024px) and (min-width: 481px) {
+  .about-section {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .about-image,
+  .about-text {
+    flex: 1 1 50%;
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 480px)
+ {
+  .about-text {
+  align-items: center;
+}
+
+  .about-text h1 {
+    font-size: 32px;
+  }
+
+  .about-text p {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  .tools-list {
+    justify-content: center;
+  }
+
+  .tools-list span {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+
+  .about-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .map-section h2 {
+    font-size: 28px;
+  }
+
+  iframe {
+    height: 300px;
+  }
+
+  .about-image {
+    height: 250px;
+    background-position: center top;
+  margin-bottom: 20px;
+  }
+
+  .about-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-image,
+  .about-text {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+
+
+  </style>
+</head>
+<body>
+
+  <!-- ABOUT SECTION -->
+  <section class="about-section">
+    <div class="about-text">
+      <h1>About Me</h1>
+      <p>
+        <!-- I'm Elisha Doshi, a UI/UX designer based in Pune, Maharashtra. I specialize in creating user-centric, visually stunning digital experiences that combine creativity with usability.-->
+         I'm Elisha Doshi, a second-year BSc student based in Pune, Maharashtra, currently exploring the world of UI/UX design. I'm learning and growing every day through hands-on training at Seven Mentor, where I'm developing skills in creating user-friendly and visually appealing digital experiences.
+
+
+My interest in UI/UX comes from a love for creativity, problem-solving, and making things feel intuitive for people. While I'm still in the early stages of my journey, I'm excited to keep learning, experimenting, and building a portfolio that reflects my growth as a designer.
+      </p> 
+      <!-- <a href="portfoliotrial.html" class="about-btn">Back to Home</a> -->
+        <h3 style="margin-top: 20px; color: #555;">Tools I'm Learning</h3>
+  <div class="tools-list">
+    <span>HTML 4 & 5</span>
+    <span>CSS</span>
+       <span>Javascript </span>
+    <span>Bootstrap</span>
+       <span>Figma</span>
+    <span>Photoshop</span>
+    <span>Illustrator</span>
+        <span>Canva</span>
+    <span>UX Research</span>
+  </div>
+    </div>
+    <div class="about-image"></div>
+  </section>
+
+  <!-- MAP SECTION -->
+  <section class="map-section">
+    <h2>Find Me</h2>
+    <div class="map-container">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.393608174262!2d73.87982827344085!3d18.46582187084774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2eb00839154ed%3A0x3a4ef2f687f1bd35!2sRaviraj%20Colorado!5e0!3m2!1sen!2sin!4v1753425611246!5m2!1sen!2sin" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+        <!-- <a href="portfoliotrial.html" class="about-btn">Back to Home</a> -->
+    </div>
+  </section>
+
+ <section>
+  <div class="back-home-container">
+    <a href="portfoliotrial.html" class="about-btn">Back to Home</a>
+  </div>
+</section>
+
+</body>
+</html>
